@@ -3,6 +3,7 @@
 <p>Starts On <%= @trip.starts_on %></p>
 <p>Ends On <%= @trip.ends_on %></p>
 People You Invited:
+
 <% @guests.each do |guest| %>
-	<p><%= guest %></p>
+	<p><%= guest.email %></p>
 <% end %>

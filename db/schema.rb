@@ -10,10 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112214024) do
+ActiveRecord::Schema.define(:version => 20111112223528) do
 
   create_table "destinations", :force => true do |t|
     t.string   "city"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "joins", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "trip_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "trip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
