@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  destination_id: 1
+  starts_on: MyString
+  ends_on: MyString
+  guest_list: MyText
+
+two:
+  name: MyString
+  destination_id: 1
+  starts_on: MyString
+  ends_on: MyString
+  guest_list: MyText

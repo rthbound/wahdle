@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wahdle</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1><%= link_to "WAHDLE", root_url %></h1>
+	<% if logged_in? %>
+		<p><%= link_to "Sign Out", signout_url, :method => :delete  %></p>
+	<% else  %>
+		<p><%= link_to "Sign In", signin_url %> | <%= link_to "Sign Up", new_user_url %></p>
+<% end  %>
+
+
+<%= flash[:notice] %>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<h1>Create my trip!</h1>
+<%= form_for(@trip) do |form| %>
+	<div class="field">
+		<%= form.label :name, "Name your trip!" %> <br />
+		<%= form.text_field :name %>
+	</div>
+	<div class="field">
+		<%= form.label :destination, "Pick a city!" %><br />
+		<%= form.collection_select :destination_id, Destination.all, :id, :city %>
+	</div>
+	<div class="field">
+		<%= form.label :starts_on, "When are you going?" %><br />
+		<%= form.text_field :starts_on %>
+	</div>
+	<div class="field">
+		<%= form.label :ends_on, "When are you coming back?" %><br />
+		<%= form.text_field :ends_on %>
+	</div>
+	<div class="field">
+		<%= form.label :guest_list, "Who're your Wahdlers?" %><br />
+		<%= form.text_area :guest_list %>
+	</div>
+	<div class="action">
+		<%= form.submit %>
+	</div>
+<% end %>

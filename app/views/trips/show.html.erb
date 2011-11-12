@@ -1,0 +1,8 @@
+<h1><%= @trip.name %></h1>
+<p>Destination <%= @trip.destination.city %></p>
+<p>Starts On <%= @trip.starts_on %></p>
+<p>Ends On <%= @trip.ends_on %></p>
+People You Invited:
+<% @guests.each do |guest| %>
+	<p><%= guest %></p>
+<% end %>
