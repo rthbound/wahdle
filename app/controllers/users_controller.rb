@@ -15,4 +15,6 @@ class UsersController < ApplicationController
     end
   end
   
+  def new_guest
+  end
 end

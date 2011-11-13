@@ -17,7 +17,7 @@
 					Plan Event
 				</div>
 				<div class="step" style="text-align:center;">
-					<div class="step_image" id="step_2_inactive"></div>
+					<div class="step_image" id="step_2_active"></div>
 					Invite Guests
 				</div>
 				<div class="step" style="text-align:right;width:195px;">
@@ -35,29 +35,26 @@
 					<div class="loop" style="float:right;"></div>
 					<div class="clr"></div>
 				</div>
-				<%= form_for @trip do |form| %>
 				<div id="step_box_content">
-						<div class="input_names">
-							<div class="name"><%= form.label :name, "Name:" %></div>
-							<div class="name"><%= form.label :destination, "Where:" %></div>
+					<%= form_tag add_users_path(:trip_id => params[:trip_id]) do %>
+						<div class="input_names" id="guest_labels">
+							<div class="name"><label>Guest 1</label></div>
+							<div class="name"><label>Guest 2</label></div>
+							<div class="name"><label>Guest 3</label></div>
+							<div class="name"><label>Guest 4</label></div>
 						</div>
-						<div class="input_boxes">
-							<%= form.text_field :name %>
-							<%= form.text_field :destination %>
-						</div>	
-						<div class="clr"></div>
-						<div class="datepicker_wrap">
-							<div id="trip_starts_on_picker"></div>
-							<div id="trip_ends_on_picker"></div>
-							<%= form.hidden_field :starts_on %>
-							<%= form.hidden_field :ends_on %>
-							<div class="clr"></div>
-						</div>								
+						<div class="input_boxes" id="guest_inputs">
+							<%= text_field :emails, :"0", :placeholder => "guest1@example.com" %>
+							<%= text_field :emails, :"1", :placeholder => "guest2@example.com" %>
+							<%= text_field :emails, :"2", :placeholder => "guest3@example.com" %>
+							<%= text_field :emails, :"3", :placeholder => "guest4@example.com" %>
+						</div>									
+						<a href="JavaScript:void(0);" id="add_guest" class="button_action orange_action" style="float:left;margin-left:10px;">Add more</a>
 						<div class="clr"></div>
 					</div>
-					<div id="step_box_footer" style="padding:10px 160px 0;">
-						Let's do this...
-						<%= form.submit "Create Trip", :class => "button_action blue_action", :style => "float:right" %>
+					<div id="step_box_footer" style="padding:10px 110px 0;">
+						Send out some invites...
+						<%= submit_tag "Invite Guests", :class => "button_action blue_action", :style => "float:right" %>
 					</div>
 				<% end %>	
 			</div>

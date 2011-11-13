@@ -1,10 +1,8 @@
 <h1><%= @trip.name %></h1>
 <p><%= link_to "See Messages", trip_messages_url(params[:id])%></p>
-<p>Destination <%= @trip.destination.city %></p>
+<p>Destination <%= @trip.destination %></p>
 <p>Starts On <%= @trip.starts_on %></p>
 <p>Ends On <%= @trip.ends_on %></p>
-People You Invited:
-
-<% @guests.each do |guest| %>
+<p><% @guests.each do |guest| %>
 	<p><%= guest.email %></p>
-<% end %>
+	<% end %></p>

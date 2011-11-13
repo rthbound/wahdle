@@ -10,6 +10,26 @@
 //= require_tree .
 
 $(function(){
-	$("#trip_starts_on").datepicker();
-	$("#trip_ends_on").datepicker();
+	$("#trip_starts_on_picker").datepicker({
+	   onSelect: function(dateText, inst) {
+	      $("#trip_starts_on").val(dateText);
+	   }
+	});
+	$("#trip_ends_on_picker").datepicker({
+	   onSelect: function(dateText, inst) {
+	      $("#trip_ends_on").val(dateText);
+	   }
+	});
+	
+	$("#add_guest").click(function(){
+		var number_of_guests = $('.name').length + 1;
+		var new_label = "<div class=\"name\"><label>Guest "+ number_of_guests +"</label></div>";
+		var new_input = "<input id=\"user_email\" type=\"text\" size=\"30\" placeholder=\"guest"+ number_of_guests +"@example.com\" name=\"emails["+number_of_guests+"]\">";
+		
+		$('#guest_labels').append(new_label);
+		$('#guest_inputs').append(new_input);
+		
+		$('#number_of_guests').val(number_of_guests);
+	});
+	
 });

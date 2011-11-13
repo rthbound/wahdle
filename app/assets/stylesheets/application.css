@@ -5,3 +5,275 @@
  *= require_self
  *= require_tree . 
 */
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    min-height: 100%;
+    min-width: 950px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+div.clr {
+	clear: both;
+}
+/**COMMON BUTTON STYLING****************************************************************/
+a.button_action,
+input[type="submit"].button_action {
+	border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 18px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #555555;
+    box-shadow: 0 1px 2px #666666;
+}
+a.orange_action,
+input[type="submit"].orange_action {
+	background: url("bg_buttons.png") repeat-x scroll 0 0 transparent;
+    border: 1px solid #9E5F0E;
+}
+a.orange_action:hover,
+input[type="submit"].orange_action:hover {
+	background: url("bg_buttons.png") repeat-x scroll 0 -44px transparent;
+}
+a.blue_action,
+input[type="submit"].blue_action {
+	background: url("bg_buttons.png") repeat-x scroll 0 -88px transparent;
+    border: 1px solid #21586d;
+}
+a.blue_action:hover,
+input[type="submit"].blue_action:hover {
+	background: url("bg_buttons.png") repeat-x scroll 0 -132px transparent;
+}
+/**HEADER****************************************************************/
+#header_wrapper {
+	background: url('bg_header.png') repeat-x center bottom;
+	height: 86px;
+	border-bottom: 1px solid #738993;
+}
+#header_wrapper #header_inner {
+	width: 960px;
+	margin: 0 auto;
+}
+#header_wrapper #header_inner #main_logo {
+	background: url('main_logo.png') no-repeat;
+	height: 58px;
+	width: 222px;
+	float: left;
+	margin-top: 15px;
+}
+/**MAIN BANNER****************************************************************/
+#main_banner {
+	height: 710px;
+	background: url('bg_lt_blue.png') repeat-x;
+	border-top: 1px solid #94afbc;
+}
+#main_banner #city_scape {
+	width: 1200px;
+	margin: 0 auto;
+	height: 710px;
+	background: url('bg_city_scape.png') no-repeat center bottom;
+}
+#main_banner #city_scape #quote_wrapper {
+	width: 960px;
+	margin: 20px auto 0;
+}
+/**Main Quote****/
+#main_banner #city_scape #quote_wrapper #main_quote {
+	color: #FFFFFF;
+	font-size: 40px;
+	text-align: center;
+	text-shadow: 1px 1px 2px #6E8188;
+}
+#main_banner #city_scape #quote_wrapper #sub_quote {
+	color: #666666;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #EEEEEE;
+    line-height: 38px;
+    height: 38px;
+    margin: 0 auto;
+    width: 670px;
+    margin-top: 5px;
+}
+#main_banner #city_scape #quote_wrapper #sub_quote a {
+	width: 100px;
+	float: right;
+}
+/**Step Wrapper****/
+#main_banner #city_scape #step_wrapper {
+	background: #FFFFFF;
+    border: 1px solid #5D5D5D;
+    border-radius: 8px;
+    margin: 40px auto 0;
+    width: 700px;
+	box-shadow: 0 0 7px #777777;
+}
+#main_banner #city_scape #step_wrapper #step_inner {
+	background: url('bg_step_inner.png') repeat-x center bottom;
+    border-radius: 7px;
+    margin: 1px auto;
+    width: 698px;
+	padding-bottom:15px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header {
+	height: 90px;
+	width: 100%;
+	border-radius: 7px 7px 0 0;
+	background: #f6e4d2;
+	border-bottom: 1px solid #FFFFFF;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_quote {
+	color: #DE8613;
+    font-size: 25px;
+    line-height: 90px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #FFFFFF;
+	background: url('gradient_logo.png') no-repeat left;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap {
+	width: 540px;
+	margin: 0 auto;
+	padding-top: 8px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step {
+	float: left;
+	color: #de8613;
+	text-shadow: 1px 1px 0 #FFFFFF;
+	font-size: 18px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step div.step_image {
+	height: 40px;
+	width: 160px;
+	margin-bottom: 10px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_1_inactive {
+	background: url('bg_steps.png') no-repeat 0 -40px;
+	float: right;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_1_active {
+	background: url('bg_steps.png') no-repeat 0 0;
+	float: right;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_2_inactive {
+	background: url('bg_steps.png') no-repeat 0 -120px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_2_active {
+	background: url('bg_steps.png') no-repeat 0 -80px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_3_inactive {
+	background: url('bg_steps.png') no-repeat 0 -200px;
+	float: left;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_header #steps_wrap div.step #step_3_active {
+	background: url('bg_steps.png') no-repeat 0 -160px;
+	float: left;
+}
+/**Step Main****/
+#main_banner #city_scape #step_wrapper #step_inner #step_main {
+	background: url('bg_step_main.png') repeat-x center top;
+	border-top: 1px solid #ac826e;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box {
+	border: 1px solid #BBBBBB;
+    border-radius: 5px 5px 5px 5px;
+    margin: 25px 20px 0;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #loops_wrap {
+	margin: 10px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #loops_wrap div.loop {
+	background: url('bg_loop.png') no-repeat center center;
+	height: 9px;
+	width: 48px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content {
+	border-bottom: 1px solid #b5b5b5;
+	background: url('bg_step_box_content.png') repeat-x center bottom;
+	padding: 20px 40px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_names {
+	float: left;	
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_names div.name {
+	color: #444444;
+    font-size: 25px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_boxes {
+	float: left;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_boxes input {
+	 border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 -1px 0 #888888;
+    color: #666666;
+    display: block;
+    font-size: 20px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+    width: 400px;
+}
+/**DatePicker****/
+#trip_starts_on_picker,
+#trip_ends_on_picker {
+	font-size:10px;
+	float:left;
+	
+}
+
+
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box_footer {
+	background: none repeat scroll 0 0 #E3E3E3;
+    border: 1px solid #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    color: #666666;
+    font-size: 25px;
+    height: 48px;
+    line-height: 40px;
+    padding: 10px 110px 0;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+#main_banner #city_scape #step_wrapper #step_inner #step_main #step_box_footer a {
+	float: right;
+}
+/**NAVIGATION****************************************************************/
+#navigation {
+	height: 40px;
+	background: url('bg_dk_blue.png') repeat-x;
+	border-top: 1px solid #30556a;
+}
+#navigation #navigation_inner {
+	width: 960px;
+	margin: 0 auto;
+}
+#navigation #navigation_inner #navigation_links {
+	text-align: center;
+	font-size: 14px;
+	color: #c0ccd2;
+	margin-top: 14px;
+	text-shadow: 1px 1px 0 #444444;
+}
+#navigation #navigation_inner #navigation_links span {
+	font-weight: bold;
+	padding: 0 10px;
+}
+#navigation #navigation_inner #navigation_links a {
+	color: #c0ccd2;
+	text-decoration: none;
+	padding: 0 10px;
+}
+#navigation #navigation_inner #navigation_links a:hover {
+	color: #EEEEEE;
+}

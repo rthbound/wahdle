@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112223528) do
+ActiveRecord::Schema.define(:version => 20111113030206) do
 
   create_table "destinations", :force => true do |t|
     t.string   "city"
@@ -35,10 +35,9 @@ ActiveRecord::Schema.define(:version => 20111112223528) do
 
   create_table "trips", :force => true do |t|
     t.string   "name"
-    t.integer  "destination_id"
+    t.string   "destination"
     t.string   "starts_on"
     t.string   "ends_on"
-    t.text     "guest_list"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

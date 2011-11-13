@@ -14,13 +14,20 @@ class TripsController < ApplicationController
 
   def create
     if @trip = current_user.trips.create(params[:trip])
-      redirect_to trip_url(@trip), :notice => "Trip successfully created!"
+      redirect_to new_guests_path(:trip_id => @trip.id), :notice => "Trip successfully created!"
     else
-      redirect_to new_trip_url, :notice => "You missed some things."
-    end
-    
-    @trip.guest_list.split(", ").each do |email|
-      @trip.users.create(:email => email, :password => "password", :password_confirmation => "password")
+      redirect_to "users/new_guests", :notice => "You missed some things."
     end
   end
+  
+  def add_users
+    email_list = params[:emails]
+    @trip = Trip.find(params[:trip_id])
+    email_list.each do |key, value|
+      @trip.users.create(:email => value, :password => "password", :password_confirmation => "password")
+    end
+    @trip.save
+    redirect_to trip_url(@trip)
+  end
+  
 end
