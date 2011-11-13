@@ -13,8 +13,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = current_user.trips.new(params[:trip])
-    if @trip.save
+    if @trip = current_user.trips.create(params[:trip])
       redirect_to trip_url(@trip), :notice => "Trip successfully created!"
     else
       redirect_to new_trip_url, :notice => "You missed some things."

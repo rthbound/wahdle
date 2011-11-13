@@ -8,9 +8,9 @@ Wahdle::Application.routes.draw do
   post "sessions/create"
   delete "sessions/destroy", :as => :signout
   
-  resources :trips
-  
-  resources :messages
+  resources :trips do
+    resources :messages
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

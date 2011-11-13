@@ -3,7 +3,7 @@
 <table><%= render @messages %></table>
 
 <h1>Write a message</h1>
-<%= form_for @message do |form| %>
+<%= form_for @message, :url => trip_messages_url(params[:trip_id]), :method => :post do |form| %>
 	<div class="field">
 		<%= form.label :text %> <br />
 		<%= form.text_area :text, :rows => 3 %>

@@ -1,5 +1,6 @@
 class Message < ActiveRecord::Base
   belongs_to :user
+  belongs_to :trip
   
-  scope "created_at desc"
+  default_scope :order => "created_at DESC"
 end

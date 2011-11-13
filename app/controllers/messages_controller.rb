@@ -4,16 +4,17 @@ class MessagesController < ApplicationController
   end
   
   def index
-    @messages = Message.all
+    @messages = Trip.find(params[:trip_id]).messages.all
     @message = Message.new
   end
   
   def create
     @message = current_user.messages.new(params[:message])
+    @message.trip = Trip.find(params[:trip_id])
     if @message.save
-      redirect_to messages_url, :notice => "Posted!"
+      redirect_to trip_messages_url, :notice => "Posted!"
     else
-      redirect_to messages_url, :notice => "Try again!"
+      redirect_to trip_messages_url, :notice => "Try again!"
     end
   end
 end
