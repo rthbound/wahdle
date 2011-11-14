@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Thanks for signing up!"
       session[:user_id] = @user.id
-      redirect_to new_trip_url
+      redirect_to trip_url(params[:trip_id])
     else
       flash[:notice] = "Please try to sign up again."
       render :new
@@ -17,4 +17,5 @@ class UsersController < ApplicationController
   
   def new_guest
   end
+
 end

@@ -1,8 +1,91 @@
-<h1><%= @trip.name %></h1>
-<p><%= link_to "See Messages", trip_messages_url(params[:id])%></p>
-<p>Destination <%= @trip.destination %></p>
-<p>Starts On <%= @trip.starts_on %></p>
-<p>Ends On <%= @trip.ends_on %></p>
-<p><% @guests.each do |guest| %>
-	<p><%= guest.email %></p>
-	<% end %></p>
+
+<!--START SHOW TRIP HTML****************************************************-->
+<div id="trip_header">
+	<div id="trip_header_inner">
+		<div id="trip_name">
+			Trip: <%= @trip.name %>
+		</div>
+	</div>
+</div>
+<div id="trip_details_wrapper">
+	<div id="trip_details_inner">
+		<div class="trip_column" id="left_column">
+			<div class="content_box">
+				<div class="content_header">
+					Trip Info
+				</div>
+				<div class="content">
+					<div class="content_row">
+						<span class="title">Name:</span><%= @trip.name %>
+					</div>
+					<div class="content_row">
+						<span class="title">City:</span><%= @trip.destination %>
+					</div>
+					<div class="content_row">
+						<span class="title">Starts:</span><%= @trip.starts_on %>
+					</div>
+					<div class="content_row">
+						<span class="title">Ends:</span><%= @trip.ends_on %>
+					</div>
+				</div>
+			</div>
+			<div class="content_box">
+				<div class="content_header">
+					Guest List
+				</div>
+				<div class="content">
+					<% @guests.each do |guest| %>
+						<div class="content_row">
+							<%= guest.email %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="trip_column" id="middle_column">
+			<div id="message_wrapper">
+				<div id="message_header">
+					<%= form_for @message, :url => messages_url(:id => @trip.id) do |form| %>
+					<%= form.text_field :text, :placeholder => "Post a message" %>
+					<%= form.submit "Post", :class => "blue_action button_action" %>
+					<% end %>
+				</div>
+				<div id="message_content">
+					<% @messages.each do |message|%>
+					<div class="comment_box">
+						<span class="name"><%= message.user.email %> says: </span><%= message.text %>
+						<span class="time"><%= time_ago_in_words(message.created_at) %> ago</span>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="trip_column" id="right_column">
+			<div class="content_box">
+				<div class="content_header">
+					Hotel List
+				</div>
+				<div class="content">
+					<% @hotels.each do |hotel|%>
+						<div class="content_row">
+							<%= hotel.name %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+	</div>		
+</div>
+	
+
+
+
+
+
+	
+	
+
+
+
+

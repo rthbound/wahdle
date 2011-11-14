@@ -1,22 +1,26 @@
 Wahdle::Application.routes.draw do
   
 
+  get "trips/new_hotels", :controller => :trips, :action => :new_hotels, :method => :get, :as => :new_hotels
   get "users/new_guest", :controller => :users, :action => :new_guest, :method => :get, :as => :new_guests
   post 'trip/add_users', :controller => :trips, :action => :add_users, :as => :add_users
+  post 'trip/add_hotels', :controller => :trips, :action => :add_hotels, :as => :add_hotels
+
+
+  get "trips/show", :controller => :trips, :action => :show, :method => :get, :as => :show
 
   resources :users
   
-
+  resources :hotels
   
-  root :to => "sessions#new"
+  root :to => "trips#new"
   
   get "sessions/new", :as => :signin
   post "sessions/create"
   delete "sessions/destroy", :as => :signout
   
-  resources :trips do
-    resources :messages
-  end
+  resources :trips
+  resources :messages
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

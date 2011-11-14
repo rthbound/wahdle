@@ -17,11 +17,11 @@
 					Plan Event
 				</div>
 				<div class="step" style="text-align:center;">
-					<div class="step_image" id="step_2_inactive"></div>
+					<div class="step_image" id="step_2_active"></div>
 					Invite Guests
 				</div>
 				<div class="step" style="text-align:right;width:195px;">
-					<div class="step_image" id="step_3_inactive"></div>
+					<div class="step_image" id="step_3_active"></div>
 					<div class="clr"></div>
 					Hotel Search
 				</div>
@@ -35,30 +35,26 @@
 					<div class="loop" style="float:right;"></div>
 					<div class="clr"></div>
 				</div>
-				<%= form_for @trip do |form| %>
 				<div id="step_box_content">
-						<div class="input_names">
-							<div class="name"><%= form.label :name, "Name:" %></div>
-							<div class="name"><%= form.label :destination, "Where:" %></div>
-							<div class="name">When:</div>
+					<%= form_tag hotels_url(:trip_id => params[:trip_id]) do %>
+						<div class="input_names" id="hotel_labels">
+							<div class="name"><label>Hotel 1</label></div>
+							<div class="name"><label>Hotel 2</label></div>
+							<div class="name"><label>Hotel 3</label></div>
+							<div class="name"><label>Hotel 4</label></div>
 						</div>
-						<div class="input_boxes">
-							<%= form.text_field :name, :placeholder => "ie. Ben's Ski Trip" %>
-							<%= form.text_field :destination, :placeholder => "ie. Colorado" %>
-						</div>	
-						<div class="clr"></div>
-						<div id="datepicker_wrap">
-							<div id="trip_starts_on_picker"></div>
-							<div id="trip_ends_on_picker"></div>
-							<%= form.hidden_field :starts_on %>
-							<%= form.hidden_field :ends_on %>
-							<div class="clr"></div>
-						</div>								
+						<div class="input_boxes" id="hotel_inputs">
+							<%= text_field :hotels, :"0", :placeholder => "Trump Tower" %>
+							<%= text_field :hotels, :"1", :placeholder => "Code Academy Motel" %>
+							<%= text_field :hotels, :"2", :placeholder => "Holiday Inn" %>
+							<%= text_field :hotels, :"3", :placeholder => "The Dorchester" %>
+						</div>									
+						<a href="JavaScript:void(0);" id="add_hotel" class="button_action orange_action" style="float:left;margin-left:10px;">Add more</a>
 						<div class="clr"></div>
 					</div>
-					<div id="step_box_footer" style="padding:10px 160px 0;">
-						Let's do this...
-						<%= form.submit "Invite Guests", :class => "button_action blue_action", :style => "float:right" %> 
+					<div id="step_box_footer" style="padding:10px 110px 0;">
+						Let's add some hotels...
+						<%= submit_tag "Add Hotels", :class => "button_action blue_action", :style => "float:right" %>
 					</div>
 				<% end %>	
 			</div>

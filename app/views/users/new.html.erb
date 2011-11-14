@@ -22,7 +22,7 @@
 					<div class="clr"></div>
 				</div>
 				<div id="step_box_content">
-					<%= form_for @user do |form| %>
+					<%= form_for @user, :url => users_url(:trip_id => params[:trip_id]) do |form| %>
 						<div class="input_names">
 							<div class="name"><%= form.label :name%>:</div>
 							<div class="name"><%= form.label :email%>:</div>

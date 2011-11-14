@@ -32,4 +32,15 @@ $(function(){
 		$('#number_of_guests').val(number_of_guests);
 	});
 	
+	$("#add_hotel").click(function(){
+		var number_of_hotels = $('.name').length + 1;
+		var new_label = "<div class=\"name\"><label>Hotel "+ number_of_hotels +"</label></div>";
+		var new_input = '<input id="user_email" type="text" size="30" placeholder="Hotel '+number_of_hotels+'" name="hotels['+number_of_hotels+']\">';
+		
+		$('#hotel_labels').append(new_label);
+		$('#hotel_inputs').append(new_input);
+		
+		$('#number_of_hotels').val(number_of_hotels);
+	});
+	
 });

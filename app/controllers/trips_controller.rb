@@ -1,22 +1,30 @@
 class TripsController < ApplicationController
+  
   def index
-    @trips = current_user.trips.all
-    
+    @trips = current_user.trips.all 
   end
+  
   def new
     @trip = Trip.new
   end
   
   def show
+   
     @trip = Trip.find(params[:id])
+    
     @guests = @trip.users
+    @hotels = @trip.hotels
+    @messages = Trip.find(params[:id]).messages.all
+    @message = Message.new
+    
+    render :layout => 'trip_layout'
   end
 
   def create
-    if @trip = current_user.trips.create(params[:trip])
+    if @trip = Trip.create(params[:trip])
       redirect_to new_guests_path(:trip_id => @trip.id), :notice => "Trip successfully created!"
     else
-      redirect_to "users/new_guests", :notice => "You missed some things."
+      redirect_to new_trip_url, :notice => "You missed some things."
     end
   end
   
@@ -27,7 +35,8 @@ class TripsController < ApplicationController
       @trip.users.create(:email => value, :password => "password", :password_confirmation => "password")
     end
     @trip.save
-    redirect_to trip_url(@trip)
+    redirect_to new_hotel_url(:trip_id => @trip.id)
   end
+  
   
 end
