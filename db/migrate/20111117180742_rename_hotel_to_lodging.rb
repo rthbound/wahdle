@@ -1,5 +1,5 @@
-class RenameLodgingToLodging < ActiveRecord::Migration
+class RenameHotelToLodging < ActiveRecord::Migration
   def change
-      rename_table :lodgings, :lodgings
+      rename_table :hotels, :lodgings
   end
 end
