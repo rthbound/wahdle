@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class HotelsHelperTest < ActionView::TestCase
+class LodgingsHelperTest < ActionView::TestCase
 end

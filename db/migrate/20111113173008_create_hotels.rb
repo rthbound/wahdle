@@ -1,6 +1,6 @@
-class CreateHotels < ActiveRecord::Migration
+class CreateLodgings < ActiveRecord::Migration
   def change
-    create_table :hotels do |t|
+    create_table :lodgings do |t|
       t.string :name
       t.integer :trip_id
 

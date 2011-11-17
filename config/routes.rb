@@ -1,17 +1,17 @@
 Wahdle::Application.routes.draw do
   
 
-  get "trips/new_hotels", :controller => :trips, :action => :new_hotels, :method => :get, :as => :new_hotels
+  get "trips/new_lodgings", :controller => :trips, :action => :new_lodgings, :method => :get, :as => :new_lodgings
   get "users/new_guest", :controller => :users, :action => :new_guest, :method => :get, :as => :new_guests
   post 'trip/add_users', :controller => :trips, :action => :add_users, :as => :add_users
-  post 'trip/add_hotels', :controller => :trips, :action => :add_hotels, :as => :add_hotels
+  post 'trip/add_lodgings', :controller => :trips, :action => :add_lodgings, :as => :add_lodgings
 
 
   get "trips/show", :controller => :trips, :action => :show, :method => :get, :as => :show
 
   resources :users
   
-  resources :hotels
+  resources :lodgings
   
   root :to => "trips#new"
   

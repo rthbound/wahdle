@@ -13,7 +13,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     
     @guests = @trip.users
-    @hotels = @trip.hotels
+    @lodgings = @trip.lodgings
     @messages = Trip.find(params[:id]).messages.all
     @message = Message.new
     
@@ -35,7 +35,7 @@ class TripsController < ApplicationController
       @trip.users.create(:email => value, :password => "password", :password_confirmation => "password")
     end
     @trip.save
-    redirect_to new_hotel_url(:trip_id => @trip.id)
+    redirect_to new_lodging_url(:trip_id => @trip.id)
   end
   
   

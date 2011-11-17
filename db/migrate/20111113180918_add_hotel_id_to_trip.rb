@@ -1,5 +1,5 @@
-class AddHotelIdToTrip < ActiveRecord::Migration
+class AddLodgingIdToTrip < ActiveRecord::Migration
   def change
-    add_column :trips, :hotel_id, :integer
+    add_column :trips, :lodging_id, :integer
   end
 end
