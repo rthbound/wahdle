@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117195319) do
+ActiveRecord::Schema.define(:version => 20111117195856) do
 
   create_table "destinations", :force => true do |t|
     t.string   "city"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20111117195319) do
     t.integer  "trip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "group_id"
   end
 
   create_table "trips", :force => true do |t|
@@ -54,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20111117195319) do
     t.string   "ends_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "hotel_id"
+    t.integer  "lodging_id"
   end
 
   create_table "users", :force => true do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20111117195319) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "planner",         :default => false
+    t.integer  "group_id"
   end
 
 end
