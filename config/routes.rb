@@ -1,6 +1,10 @@
 Wahdle::Application.routes.draw do
   
 
+  get "groups/new"
+
+  get "groups/create"
+
   get "trips/new_lodgings", :controller => :trips, :action => :new_lodgings, :method => :get, :as => :new_lodgings
   get "users/new_guest", :controller => :users, :action => :new_guest, :method => :get, :as => :new_guests
   post 'trip/add_users', :controller => :trips, :action => :add_users, :as => :add_users
