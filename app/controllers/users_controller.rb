@@ -17,5 +17,9 @@ class UsersController < ApplicationController
   
   def new_guest
   end
+  
+  def show
+    @Trips = Trip.find_all_by_user_id(current_user)
+  end
 
 end

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:notice] = "Thank you for signing in!"
-      redirect_to trip_url(current_user.trips)
+      redirect_to user_url(current_user)
     else
       flash[:notice] = "Please try again!"
       render :new
