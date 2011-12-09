@@ -19,7 +19,15 @@ class UsersController < ApplicationController
   end
   
   def show
-    @Trips = Trip.find_all_by_user_id(current_user)
+    # @trips = User.trips.find_all_by_user_id(current_user)
+    #@trips = current_user.trips.all
+    #@trips = current_user.trips
+    
+    @trips = Array.new
+    Join.find_all_by_user_id(current_user.id).each do |join|
+      @trips << join.trip
+    end
+    render :layout => 'trip_layout'
   end
 
 end

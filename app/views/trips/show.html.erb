@@ -68,7 +68,7 @@
 				<div class="content">
 					<% @lodgings.each do |lodging|%>
 						<div class="content_row">
-							<%= lodging.name %>
+							<%= link_to lodging.name, lodging.name, :target => "_blank" %>
 						</div>
 					<% end %>
 				</div>
