@@ -240,11 +240,11 @@ input[type="submit"].blue_action:hover {
 }
 #main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_names div.name {
 	color: #444444;
-    font-size: 25px;
+    font-size: 15px;
     height: 35px;
     line-height: 35px;
     margin-bottom: 25px;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 #main_banner #city_scape #step_wrapper #step_inner #step_main #step_box #step_box_content div.input_boxes {
 	float: left;
@@ -260,7 +260,7 @@ input[type="submit"].blue_action:hover {
     line-height: 35px;
     margin-bottom: 25px;
     padding: 0 10px;
-    width: 400px;
+    width: 325px;
 }
 /**DatePicker****/
 #datepicker_wrap {
