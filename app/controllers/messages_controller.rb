@@ -1,20 +1,24 @@
 class MessagesController < ApplicationController
-  def new
-    @message = Message.new
-  end
-  
-  def index
-    @messages = Trip.find(params[:trip_id]).messages.all
-    @message = Message.new
-  end
-  
+  before_filter :trip
+  before_filter :new_message, only: [:new, :index]
+  before_filter :trip_messages, only: [:index]
+    
   def create
-    @message = current_user.messages.new(params[:message])
-    @message.trip = Trip.find(params[:id])
-    if @message.save
-      redirect_to trip_url(params[:id]), :notice => "Posted!"
-    else
-      redirect_to trip_url(params[:id]), :notice => "Try again!"
-    end
+    @message = current_user.messages.build(params[:message].merge(trip_id: @trip.id))
+    message = (@message.save ? "Posted!" : "Try again!")
+    redirect_to @trip, notice: message
+  end
+  
+  private
+  def new_message
+    @message ||= Message.new
+  end
+  
+  def trip_messages
+    @messages ||= trip.messages
+  end
+  
+  def trip
+    @trip ||= Trip.find(params[:id])
   end
 end

@@ -38,20 +38,26 @@
 				<div id="step_box_content">
 					<%= form_tag lodgings_url(:trip_id => params[:trip_id]) do %>
 						<div class="input_names" id="lodging_labels">
-							<div class="name"><label>Option 1</label></div>
-							<div class="name"><label>Option 2</label></div>
-							<div class="name"><label>Option 3</label></div>
+							<div class="name"><label>Lodging 1</label></div>
+							<div class="name"><label>Link for Lodging 1</label></div>
+							<div class="name"><label>Lodging 2</label></div>
+							<div class="name"><label>Link for Lodging 2</label></div>
+							<div class="name"><label>Lodging3</label></div>
+							<div class="name"><label>Link for Lodging 3</label></div>
 						</div>
 						<div class="input_boxes" id="lodging_inputs">
-							<%= text_field :lodgings, :"0", :placeholder => "Trump Tower" %>
-							<%= text_field :lodgings, :"1", :placeholder => "Code Academy Motel" %>
-							<%= text_field :lodgings, :"2", :placeholder => "Holiday Inn" %>
+							<%= text_field :lodgings, :"0", :placeholder => "Hard Rock Hotel" %>
+							<%= text_field :lodgings, :"0", :placeholder => "www.expedia.com/hardrock/chicago" %>
+							<%= text_field :lodgings, :"1" %>
+							<%= text_field :lodgings, :"1" %>
+							<%= text_field :lodgings, :"2" %>
+							<%= text_field :lodgings, :"2" %>
 					  </div>                 
-					                      <a href="JavaScript:void(0);" id="add_lodging" class="button_action orange_action" style="float:left;margin-left:10px;">Add more</a>
+					                      <!-- <a href="JavaScript:void(0);" id="add_lodging" class="button_action orange_action" style="float:left;margin-left:10px;">Add more</a> -->
 						<div class="clr"></div>
 					</div>
 					<div id="step_box_footer" style="padding:10px 110px 0;">
-						Let's add some lodgings...
+						Continue to event page...
 						<%= submit_tag "Add Lodgings", :class => "button_action blue_action", :style => "float:right" %>
 					</div>
 				<% end %>	
