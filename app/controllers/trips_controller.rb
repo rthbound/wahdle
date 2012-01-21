@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+  include Suitcase
   
   def index
     @trips = current_user.trips.all 
@@ -9,11 +10,22 @@ class TripsController < ApplicationController
   end
   
   def show
-   
+    @trips = current_user.trips.all
+    
+    p "START"
+    @trips.each {|i| p i.name}
+    p "END"
+    
     @trip = Trip.find(params[:id])
     
     @guests = @trip.users
-    @lodgings = @trip.lodgings
+    lodgings = @trip.lodgings
+    a=[]
+    lodgings.each {|i| a<<i.ean_hotel_id}
+    
+    
+    
+    @hotels = Hotel.find(:ids=>a )
     @messages = Trip.find(params[:id]).messages.all
     @message = Message.new
     

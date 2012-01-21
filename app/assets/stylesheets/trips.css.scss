@@ -1,3 +1,19 @@
 // Place all the styles related to the Trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.trip_select_container form select#Trip{
+	width:143px;
+	color: #444444;
+	font-size: 13px;
+	display:inline;
+}
+
+ div.trip_select_container a{
+	display:inline;
+	color: #444444;
+	font-size: 13px;
+	text-decoration: none;
+}

@@ -5,18 +5,29 @@
 		<div id="trip_name">
 			Trip: <%= @trip.name %>
 		</div>
+
 	</div>
 </div>
 <div id="trip_details_wrapper">
 	<div id="trip_details_inner">
 		<div class="trip_column" id="left_column">
+	 		<div class="trip_select_container">
+				<%= form_tag('#', :method=>'get', :multipart => false) do %>
+				 <%= select_tag("Trip", options_from_collection_for_select(@trips, "id", "name", @trip.id)) %>
+				 <%= link_to "New", root_path %>
+				<% end %>
+			
+				
+			</div>
+			
 			<div class="content_box">
 				<div class="content_header">
 					Trip Info
 				</div>
 				<div class="content">
 					<div class="content_row">
-						<span class="title">Name:</span><%= @trip.name %>
+					
+						<span class="title">Name:</span><%= "#{@trip.name}"  %>
 					</div>
 					<div class="content_row">
 						<span class="title">City:</span><%= @trip.destination %>
@@ -65,13 +76,14 @@
 				<div class="content_header">
 					Lodging List
 				</div>
-				<div class="content">
-					<% @lodgings.each do |lodging|%>
-						<div class="content_row">
-							<%= link_to lodging.name, lodging.name, :target => "_blank" %>
-						</div>
+				<ul class="content">
+					<% @hotels.each do |h|%>
+						<li>
+							<%= 	render(	:partial => "/trips/hotel_thumbnail", 
+											:locals => { :object => h})%>
+						</li>
 					<% end %>
-				</div>
+				</ul>
 			</div>
 		</div>
 		<div class="clr"></div>

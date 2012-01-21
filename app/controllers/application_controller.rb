@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :current_user_trips_url
   
 
   def current_user
@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user != nil
   end
+  
+  def current_user_trips_url
+    if logged_in?
+      trip_url(current_user.trips.last.id)
+    end
+  end
+  
+      
 end

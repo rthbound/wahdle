@@ -3,7 +3,7 @@ class CreateJoins < ActiveRecord::Migration
     create_table :joins do |t|
       t.integer :user_id
       t.integer :trip_id
-
+      t.boolean  :planner,  :default => false
       t.timestamps
     end
   end

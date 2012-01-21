@@ -5,9 +5,17 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+#gem 'pg'
 
 gem 'json'
+
+
+#Gems [JM]
+gem "suitcase", "~> 1.2.9" #:git => "http://github.com/thoughtfusion/suitcase.git"
+
+
+###
+
 
 # Gems used only for assets and not required
 # in production environments by default.

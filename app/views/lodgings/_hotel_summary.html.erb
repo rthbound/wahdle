@@ -1,0 +1,10 @@
+<%= check_box_tag "hotels[]", object.id, false, :class  => 'hotel_checkbox' -%> 
+ 
+<img class="thumbnail" src=<%= object.thumbnail_url %> alt="thumb"> 
+
+<div class="summary_text">
+	<h1><%= object.name %></h1>
+	<h4>$<%= "%.2f" % object.low_rate.round(2) %> <span>per night</span></h4>
+	
+	<span class="stars"><%= object.rating %></span>
+</div>

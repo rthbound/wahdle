@@ -1,11 +1,15 @@
 <div id="quote_wrapper">
-	<div id="main_quote">
+	<div id="main_quote">	
 		Now, group travel is easier than ever.
 	</div>
 	<div id="sub_quote">
 		Plan an event, invite your group, pick your lodgings & book!
 		<a href="JavaScript:void(0);" class="button_action orange_action">Learn More</a>
+		
+		<div id="notice"> <%= notice %></div>
+	
 	</div>	
+		
 </div>
 <div id="step_wrapper">
 	<div id="step_inner">
@@ -35,28 +39,21 @@
 					<div class="loop" style="float:right;"></div>
 					<div class="clr"></div>
 				</div>
-				<div id="step_box_content">
-					<%= form_tag lodgings_url(:trip_id => params[:trip_id]) do %>
-						<div class="input_names" id="lodging_labels">
-							<div class="name"><label>Lodging 1</label></div>
-							<div class="name"><label>Link 1</label></div>
-							<div class="name"><label>Lodging 2</label></div>
-							<div class="name"><label>Link 2</label></div>
-							<div class="name"><label>Lodging 3</label></div>
-							<div class="name"><label>Link 3</label></div>
-						</div>
-						<div class="input_boxes" id="lodging_inputs">
-							<%= text_field :lodgings, :"0", :placeholder => "Hard Rock Hotel" %>
-							<%= text_field :lodgings, :"0", :placeholder => "www.expedia.com/hardrock/chicago" %>
-							<%= text_field :lodgings, :"1" %>
-							<%= text_field :lodgings, :"1" %>
-							<%= text_field :lodgings, :"2" %>
-							<%= text_field :lodgings, :"2" %>
-					  </div>                 
-					                      <!-- <a href="JavaScript:void(0);" id="add_lodging" class="button_action orange_action" style="float:left;margin-left:10px;">Add more</a> -->
+				<div id="step_box_content_alt">
+					<div id="hotel_list_container">
+						<%= form_tag lodgings_url(:trip_id => params[:trip_id]) do %>	
+							<% @hotels.each  do |h|  %>
+							<div class="hotel_summary" >
+								<%= 	render(	:partial => "/lodgings/hotel_summary", 
+											:locals => { :object => h})%>
+							</div>	
+							<% end %>
+					</div>	
+				
+								 
 						<div class="clr"></div>
 					</div>
-					<div id="step_box_footer" style="padding:10px 110px 0;">
+					<div id="step_box_footer" style="padding:10px 90px 0;">
 						Continue to event page...
 						<%= submit_tag "Add Lodgings", :class => "button_action blue_action", :style => "float:right" %>
 					</div>

@@ -13,7 +13,7 @@
 			<div id="main_logo"></div>
 			<div id="session_box">
 				<% if logged_in? %>
-					<div class="session_label">Hello, <%= current_user.email %>!</div>
+					<div class="session_label">Hello, <%= current_user.email %>! | <%= link_to "My Trips", current_user_trips_url%> </div>
 					<%= link_to "Sign Out", signout_url, :method => :delete, :class => "button_action orange_action", :style => "height:23px; line-height:23px; font-size:14px; float:right; margin-left:10px;"  %>
 				<% else  %>				
 					<%= form_tag sessions_create_url do %>
@@ -29,6 +29,7 @@
 	</div>
 		<div id="main_banner">
 			<div id="city_scape">
+			
 				<%= yield %>
 			</div>		
 		</div>

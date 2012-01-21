@@ -4,10 +4,17 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
+    
+    @trip = Trip.find(params[:trip_id])
+    @user= current_user || @trip.users.new(params[:user])
+    
+    
+    
     if @user.save
       flash[:notice] = "Thanks for signing up!"
       session[:user_id] = @user.id
+      Join.create(:user_id=>@user.id,:trip_id=>@trip.id,:planner=>TRUE)
+      p "SAVED JOIN #{@user.id}, #{@trip.id}"  
       redirect_to trip_url(params[:trip_id])
     else
       flash[:notice] = "Please try to sign up again."
@@ -19,13 +26,10 @@ class UsersController < ApplicationController
   end
   
   def show
-    # @trips = User.trips.find_all_by_user_id(current_user)
-    #@trips = current_user.trips.all
-    #@trips = current_user.trips
     
     @trips = Array.new
     Join.find_all_by_user_id(current_user.id).each do |join|
-      @trips << join.trip
+    @trips << join.trip
     end
     render :layout => 'trip_layout'
   end
