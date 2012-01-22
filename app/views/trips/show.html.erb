@@ -12,8 +12,8 @@
 	<div id="trip_details_inner">
 		<div class="trip_column" id="left_column">
 	 		<div class="trip_select_container">
-				<%= form_tag('#', :method=>'get', :multipart => false) do %>
-				 <%= select_tag("Trip", options_from_collection_for_select(@trips, "id", "name", @trip.id)) %>
+				<%= form_tag(show_url, :method=>'get', :multipart => false) do %>
+				 <%= select_tag("id", options_from_collection_for_select(@trips, "id", "name", @trip.id),{ :onchange => "this.form.submit();"}) %>
 				 <%= link_to "New", root_path %>
 				<% end %>
 			

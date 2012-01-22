@@ -3,7 +3,8 @@ class LodgingsController < ApplicationController
     include Suitcase
    
     def new
-       @hotels = Hotel.find(:location => 'Boston, MA', :results => 100)
+      @trip = Trip.find(params[:trip_id])
+      @hotels = Hotel.find(:location => @trip.destination, :results => 100)
     end
     
     def create
