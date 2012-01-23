@@ -43,12 +43,22 @@ class TripsController < ApplicationController
   def add_users
     email_list = params[:emails]
     @trip = Trip.find(params[:trip_id])
+    
     email_list.each do |key, value|
       @trip.users.create(:email => value, :password => "password", :password_confirmation => "password")
     end
+    
     @trip.save
     redirect_to new_lodging_url(:trip_id => @trip.id)
   end
   
+  def location_search
+    begin
+      @locations = Suitcase::Hotel::Location.find(:destination_string => params[:location])
+    rescue
+      @locations = []
+    end
+    render 'autocomplete'
+  end
   
 end

@@ -9,7 +9,7 @@ Wahdle::Application.routes.draw do
   get "users/new_guest", :controller => :users, :action => :new_guest, :method => :get, :as => :new_guests
   post 'trip/add_users', :controller => :trips, :action => :add_users, :as => :add_users
   post 'trip/add_lodgings', :controller => :trips, :action => :add_lodgings, :as => :add_lodgings
-
+  post 'trip/location_search', :controller => :trips, :action => :location_search, :as => :location_search
 
   get "trips/show", :controller => :trips, :action => :show, :method => :get, :as => :show
 

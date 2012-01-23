@@ -11,7 +11,7 @@ gem 'json'
 
 
 #Gems [JM]
-gem "suitcase", "~> 1.2.9" #:git => "http://github.com/thoughtfusion/suitcase.git"
+gem "suitcase", "~> 1.2.12" #:git => "http://github.com/thoughtfusion/suitcase.git"
 
 
 ###

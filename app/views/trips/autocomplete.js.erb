@@ -1,0 +1,7 @@
+$(document).ready(function() {
+  locations = [];
+  <% @locations.each do |location| %>
+    locations.push("<%= location.city + ", " + location.province + ", " + location.country_code %>");
+  <% end %>
+  $('#hotel_location_field').autocomplete({ source: locations });
+});
