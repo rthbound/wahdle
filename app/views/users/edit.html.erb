@@ -1,0 +1,49 @@
+<div id="quote_wrapper">
+	<div id="main_quote">
+		Now, group travel is easier than ever.
+	</div>
+	<div id="sub_quote">
+		Plan an event, invite your group, pick a lodging & book!
+		<a href="JavaScript:void(0);" class="button_action orange_action">Learn More</a>
+	</div>	
+</div>
+<div id="step_wrapper">
+	<div id="step_inner">
+		<div id="step_header">
+			<div id="steps_quote">
+				Please Create/Edit your account!
+			</div>
+		</div>
+		<div id="step_main">
+			<div id="step_box">
+				<div id="loops_wrap">
+					<div class="loop" style="float:left;"></div>
+					<div class="loop" style="float:right;"></div>
+					<div class="clr"></div>
+				</div>
+				<div id="step_box_content">
+					<%= form_for @user do |form| %>
+						<div class="input_names">
+							<div class="name"><%= form.label :name%>:</div>
+							<div class="name"><%= form.label :email%>:</div>
+							<div class="name"><%= form.label :password %>:</div>
+							<div class="name"><%= form.label :password_confirmation, "Again" %>:</div>
+						</div>
+						<div class="input_boxes">
+							<%= form.text_field :name, :placeholder => "John Doe" %>
+							<%= form.text_field :email, :placeholder => "johndoe@example.com" %>
+							<%= form.password_field :password, :placeholder => "" %>
+							<%= form.password_field :password_confirmation, :placeholder => ""%>
+						</div>									
+						<div class="clr"></div>
+					</div>
+					<div id="step_box_footer" style="padding:10px 160px 0;">
+						Let's do this...
+						<%= form.submit "Create Account", :class => "button_action blue_action", :style => "float:right" %>
+					</div>
+				<% end %>	
+			</div>
+		</div>
+	</div>
+</div>
+

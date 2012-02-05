@@ -3,7 +3,16 @@
 <div id="trip_header">
 	<div id="trip_header_inner">
 		<div id="trip_name">
-			Trip: <%= @trip.name %>
+			Trip: <%= @trip.name %>  	
+			<span id='launch'>
+			<%= form_tag launch_path(:id => params[:id]) do %>
+			<%= submit_tag "Launch Trip", :class => "button_action blue_action", :style => "float:right" %>
+			<% 	end %>
+			</span>
+			
+			<% if flash[:warning] or flash[:notice] %>
+				<div id="trip_notice"> <%= notice %></div>
+			<% end %>
 		</div>
 
 	</div>

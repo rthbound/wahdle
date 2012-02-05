@@ -1,0 +1,19 @@
+<%= @planner.email %> invited you on a group trip, 
+===========================================================
+ 
+To view trip details, please login to Wahdle, 
+just follow this link: 
+
+<%= "#{@url}/?email=#{@user.email}"%>&<%="ref=187100#{@user.id}" %>.
+ 
+Wahdle is a group travel site.  It's used to help organize.
+
+Unless you have an existing account,
+please use the following to log in.
+
+Email: 	  <%= @user.email %>
+Password: <%= "187100#{@user.id}" %>
+
+After you log in, please change your password.
+
+Thank you for using Wahdle!! 

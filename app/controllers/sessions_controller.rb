@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       #redirect_to user_url(current_user)
     else
       flash[:notice] = "Please try again!"
-      render :new
+      redirect_to root_url
     end
   end
   
